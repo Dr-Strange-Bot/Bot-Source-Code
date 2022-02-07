@@ -10,24 +10,34 @@ const yts = require("yt-search");
 module.exports.run = async (client, message, args) => {
   const query = args.join(" ");
 
-  if (!query) {
+  if (!message.channel.nsfw) {
     const errEmbed = new discord.MessageEmbed()
       .setColor("RED")
-      .setDescription(
-        "Please enter a search query.\nCorrect Usage: **>youtube [search query]**"
-      );
+      .setDescription("You can use this command in a NSFW channel.");
 
     message.reply({
       embeds: [errEmbed],
     });
   } else {
-    const result = await yts(query);
-    const videos = result.videos.slice(0, 1);
-    videos.forEach(function (v) {
+    if (!query) {
+      const errEmbed2 = new discord.MessageEmbed()
+        .setColor("RED")
+        .setDescription(
+          "Please enter a search query.\nCorrect Usage: **>youtube [search query]**"
+        );
+
       message.reply({
-        content: `${v.url}`,
+        embeds: [errEmbed2],
       });
-    });
+    } else {
+      const result = await yts(query);
+      const videos = result.videos.slice(0, 1);
+      videos.forEach(function (v) {
+        message.reply({
+          content: `${v.url}`,
+        });
+      });
+    }
   }
 };
 
