@@ -10,7 +10,7 @@
     "node": ">=16.6.1"
   },
   "author": "Ashutosh Swamy",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.25.0",
     "cheerio": "^1.0.0-rc.10",

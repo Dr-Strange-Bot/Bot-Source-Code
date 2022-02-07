@@ -22,6 +22,7 @@ module.exports.run = async (client, message, args) => {
     if (!data) {
       data = await schema.create({
         userId: user.id,
+        guildId: message.guild.id,
       });
     }
   } catch (err) {

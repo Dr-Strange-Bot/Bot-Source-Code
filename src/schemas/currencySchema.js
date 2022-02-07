@@ -7,6 +7,11 @@ const schema = new mongoose.Schema({
     required: true,
   },
 
+  guildId: {
+    type: String,
+    required: true,
+  },
+
   wallet: {
     type: Number,
     default: 1000,
