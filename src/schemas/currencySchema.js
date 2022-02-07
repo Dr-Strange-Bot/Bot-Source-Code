@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
 
   wallet: {
     type: Number,
-    default: 0,
+    default: 1000,
     required: true,
   },
 
