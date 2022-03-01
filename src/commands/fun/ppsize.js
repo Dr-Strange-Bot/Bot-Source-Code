@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
     "8=========D",
     "8==========D",
   ];
-  const ppsize = pps[Math.floor(Math.random() * pps)];
+  const ppsize = Math.floor(Math.random() * pps);
 
   const ppsizeEmbed = new discord.MessageEmbed()
     .setColor("#0155b6")
