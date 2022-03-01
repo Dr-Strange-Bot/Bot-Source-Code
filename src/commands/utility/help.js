@@ -121,7 +121,9 @@ module.exports.run = async (client, message, args) => {
   const funEmbed2 = new discord.MessageEmbed()
     .setColor("0155b6")
     .setTitle("Fun commands")
-    .setDescription("• `>howgay [user]` - Shows the gay percentage of a user")
+    .setDescription(
+      "• `>howgay [user]` - Shows the gay percentage of a user\n• `>ppsize [user]` - Shows the pp size of a user"
+    )
     .setFooter({
       text: "Use > prefix before every command of mine",
     });
