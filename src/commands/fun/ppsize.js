@@ -8,24 +8,18 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
   const user = message.mentions.users.first() || message.author;
-  const pps = [
-    "8D",
-    "8=D",
-    "8==D",
-    "8===D",
-    "8====D",
-    "8=====D",
-    "8======D",
-    "8=======D",
-    "8========D",
-    "8=========D",
-    "8==========D",
-  ];
-  const ppsize = Math.floor(Math.random() * pps);
+  const ppSize = Math.floor(Math.random() * 10);
+  let pp = "";
+
+  for (let i = 0; i < ppSize; i++) {
+    pp += "=";
+  }
+
+  const finalSize = `\n**8${pp}D**`;
 
   const ppsizeEmbed = new discord.MessageEmbed()
     .setColor("#0155b6")
-    .setDescription(`${user}'s Penis Size\n${ppsize}`);
+    .setDescription(`${user}'s Penis Size\n${finalSize}`);
 
   message.reply({
     embeds: [ppsizeEmbed],
