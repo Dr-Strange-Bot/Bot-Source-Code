@@ -4,7 +4,7 @@ Dr Strange is a perfect all in one bot which has over 40 commands.
 
 ## » Changes Made
 
-- Fixed `>ppsize [user]` command 😂
+- Added `>crime` command
 
 ## » Want to contribute
 
