@@ -48,7 +48,7 @@ module.exports.run = async (client, message, args) => {
       embeds: [timeoutEmbed],
     });
   } else {
-    if (user.id !== donatedId) {
+    if (!user.id.includes(donatedId)) {
       const errEmbed = new discord.MessageEmbed()
         .setColor("RED")
         .setDescription(
